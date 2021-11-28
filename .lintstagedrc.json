@@ -1,0 +1,4 @@
+{
+  "src/**/*.{js,ts,tsx}": "eslint --fix",
+  "src/**/*.sol": "solhint --fix"
+}

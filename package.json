@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.0.4",
@@ -33,6 +34,8 @@
     "ethers": "5.5.1",
     "hardhat": "2.7.0",
     "hardhat-gas-reporter": "1.0.4",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.2",
     "prettier": "2.5.0",
     "prettier-plugin-solidity": "1.0.0-beta.19",
     "solhint": "3.3.6",
