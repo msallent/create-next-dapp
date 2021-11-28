@@ -3,6 +3,7 @@ import { HardhatUserConfig, task } from 'hardhat/config';
 import '@typechain/hardhat';
 import 'hardhat-gas-reporter';
 import '@nomiclabs/hardhat-waffle';
+import '@nomiclabs/hardhat-etherscan';
 
 dotenv.config({ path: './.env.local' });
 
@@ -26,6 +27,9 @@ const config: HardhatUserConfig = {
     currency: 'USD',
     enabled: process.env.REPORT_GAS !== undefined,
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   paths: {
     sources: './src',
