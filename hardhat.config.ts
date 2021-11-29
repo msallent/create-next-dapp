@@ -22,7 +22,7 @@ const config: HardhatUserConfig = {
       chainId: 1337,
     },
     kovan: {
-      url: process.env.KOVAN_URL,
+      url: process.env.KOVAN_URL || '',
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },
@@ -32,7 +32,7 @@ const config: HardhatUserConfig = {
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY || '',
   },
   paths: {
     sources: './src',
