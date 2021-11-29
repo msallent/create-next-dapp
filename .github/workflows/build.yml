@@ -1,4 +1,4 @@
-name: Build
+name: Compile Solidity + Build Next.js
 
 on:
   push:
@@ -19,4 +19,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
+      - run: npx hardhat compile
       - run: npm run build
