@@ -18,6 +18,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npx hardhat compile
       - run: npm install
+      - run: npx hardhat compile
       - run: npm run build
