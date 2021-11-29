@@ -36,7 +36,7 @@ const config: HardhatUserConfig = {
     tests: './src/tests',
   },
   typechain: {
-    outDir: './src/types',
+    outDir: './src/types/contracts',
   },
 };
 
