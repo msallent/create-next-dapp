@@ -6,10 +6,27 @@ For styling the frontend, nothing comes installed by default, giving freedom to 
 
 ## 🚀 Quick start
 
-First, run the development server:
+Start by installing dependencies:
 
 ```bash
 npm install
+```
+
+Start the JSON-RPC server so that we can deploy the contract and connect to MetaMask:
+
+```bash
+npx hardhat node
+```
+
+Open a new terminal and deploy the contract. Save the address it deployed to as it'll be needed to interact with the contract from within `src/pages/index.tsx`
+
+```bash
+npx hardhat run --network localhost src/scripts/deploy.ts
+```
+
+Finally, run the frontend:
+
+```bash
 npm run dev
 ```
 
