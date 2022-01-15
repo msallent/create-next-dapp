@@ -23,7 +23,7 @@ npx hardhat node
 Open a new terminal and deploy the contract. Save the address it deployed to as it'll be needed to interact with the contract from within `src/pages/index.tsx`
 
 ```bash
-npx hardhat run --network localhost src/scripts/deploy.ts
+npx hardhat run src/scripts/deploy.ts --network localhost
 ```
 
 Finally, run the frontend:
