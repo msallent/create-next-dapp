@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import { Greeter } from '../types/contracts';
-import GreeterArtifact from '../../artifacts/src/contracts/Greeter.sol/Greeter.json';
+import { Greeter } from '@/types/contracts/Greeter';
+import GreeterArtifact from '@/artifacts/Greeter.sol/Greeter.json';
 
 const Home: NextPage = () => {
   const [newGreeting, setNewGreeting] = useState('');

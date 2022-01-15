@@ -13,7 +13,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/artifacts/*": ["artifacts/src/contracts/*"],
+      "@/components/*": ["src/components/*"],
+      "@/types/*": ["src/types/*"]
+    }
   },
   "include": ["next-env.d.ts", "hardhat.config.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
