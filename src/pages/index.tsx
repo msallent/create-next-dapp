@@ -15,7 +15,11 @@ const Home: NextPage = () => {
 
   // Run network: npx hardhat node
   // Get contract's address: npx hardhat run src/scripts/deploy.ts --network localhost
-  const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+  // const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+
+  // Contract deployed to the Kovan network
+  // If developing locally, use address commented above
+  const contractAddress = '0x7D21bc56D7b35c60Dd31d91DEA54B1bEf136cf1d';
 
   const fetchGreeting = async () => {
     // Initialize a new instance of our Greeter contract using MetaMask as the provider
