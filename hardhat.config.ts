@@ -22,7 +22,7 @@ const config: HardhatUserConfig = {
       chainId: 1337,
     },
     kovan: {
-      url: process.env.KOVAN_URL || '',
+      url: process.env.KOVAN_ENDPOINT || '',
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },
