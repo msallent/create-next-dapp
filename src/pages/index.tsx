@@ -11,7 +11,8 @@ const Home: NextPage = () => {
   const [newGreeting, setNewGreeting] = useState('');
   const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
 
-  // npx hardhat run --network localhost src/scripts/deploy.ts
+  // Run network: npx hardhat node
+  // Get contract's address: npx hardhat run src/scripts/deploy.ts --network localhost
   const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
   const fetchGreeting = async () => {
