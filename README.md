@@ -4,7 +4,7 @@
 
 Following Hardhat's recommendations, Ethers is used to interact with our contracts, and Mocha, along Chai and Waffle are used for testing.
 
-For styling the frontend, nothing comes installed by default, giving freedom to the user to choose what they prefer.
+For styling the frontend, tailwindcss is the library of choice.
 
 ## 🚀 Quick Start
 
@@ -34,7 +34,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-##  ⚙️ Environment Variables
+## ⚙️ Environment Variables
 
 By default Next.js supports reading environment variables from a `.env.local` file so we're going to use the same file to feed anything necessary to Hardhat.
 
