@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
     },
     kovan: {
       url: process.env.KOVAN_ENDPOINT || '',
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.KOVAN_PRIVATE_KEY ? [process.env.KOVAN_PRIVATE_KEY] : [],
     },
   },
   gasReporter: {
