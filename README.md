@@ -1,10 +1,12 @@
+# create-next-dapp
+
 **`create-next-dapp`** is a template repository to quickly spin up a dapp with Next.js and Hardhat. TypeScript, along other development libraries such as ESLint, Prettier, husky, solhint and lint-staged are all already installed and set up.
 
 Following Hardhat's recommendations, Ethers is used to interact with our contracts, and Mocha, along Chai and Waffle are used for testing.
 
 For styling the frontend, nothing comes installed by default, giving freedom to the user to choose what they prefer.
 
-## 🚀 Quick start
+## 🚀 Quick Start
 
 Start by installing dependencies:
 
@@ -31,6 +33,28 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+##  ⚙️ Environment Variables
+
+By default Next.js supports reading environment variables from a `.env.local` file so we're going to use the same file to feed anything necessary to Hardhat.
+
+```bash
+# Account to be used by Hardhat to make the deployment
+PRIVATE_KEY=
+
+# Easily connect to any network using alchemy.com or infura.io 
+NETWORK_ENDPOINT=
+
+# If present, gas usage will be reported for each unit test
+# CoinMarketCap API key can be provided to fetch current market price data
+# Read more: https://github.com/cgewecke/hardhat-gas-reporter
+REPORT_GAS=
+COINMARKETCAP_API_KEY=
+
+# Integration with Etherscan's contract verification service
+# Read more: https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html
+ETHERSCAN_API_KEY=
+```
 
 ## 📚 Learn More
 
