@@ -42,8 +42,10 @@ By default Next.js supports reading environment variables from a `.env.local` fi
 # Account to be used by Hardhat to make the deployment
 PRIVATE_KEY=
 
-# Easily connect to any network using alchemy.com or infura.io 
-NETWORK_ENDPOINT=
+# Easily connect to any network using alchemy.com or infura.io
+# As an example we'll be using Kovan, but any other or even multiple networks could be used
+# Read more: https://hardhat.org/tutorial/deploying-to-a-live-network.html
+KOVAN_ENDPOINT=
 
 # If present, gas usage will be reported for each unit test
 # CoinMarketCap API key can be provided to fetch current market price data
