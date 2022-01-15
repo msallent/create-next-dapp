@@ -1,4 +1,4 @@
-name: Compile Solidity + Build Next.js
+name: Build
 
 on:
   push:
