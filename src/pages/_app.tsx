@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Create Next dApp</title>
-        <html lang="en" />
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
