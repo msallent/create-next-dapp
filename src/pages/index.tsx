@@ -1,14 +1,17 @@
 import Head from 'next/head';
-import type { NextPage } from 'next';
+import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import type { Greeter } from '../types/contracts';
+import { Greeter } from '../types/contracts';
 import GreeterArtifact from '../../artifacts/src/contracts/Greeter.sol/Greeter.json';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const [greeting, setGreeting] = useState('');
   const [newGreeting, setNewGreeting] = useState('');
+
+  // We're going to use MetaMask as our provider to connect to the Ethereum network
+  // Read more: https://docs.ethers.io/v5/getting-started/#getting-started--connecting
   const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
 
   // Run network: npx hardhat node
@@ -41,8 +44,15 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    window.ethereum.request({ method: 'eth_requestAccounts' });
-    setProvider(new ethers.providers.Web3Provider(window.ethereum as any));
+    // MetaMask injects a global API into websites visited by its users at window.ethereum.
+    // This API allows websites to request users' Ethereum accounts, read data from blockchains
+    // the user is connected to, and suggest that the user sign messages and transactions.
+    // Read more: https://docs.metamask.io/guide/ethereum-provider.html
+
+    if (window.ethereum) {
+      window.ethereum.request({ method: 'eth_requestAccounts' });
+      setProvider(new ethers.providers.Web3Provider(window.ethereum as any));
+    }
   }, []);
 
   return (
@@ -54,19 +64,25 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.container}>
         <h1>create-next-dapp</h1>
-        <h3>
-          Greeting: <span className={styles.greeting}>{greeting}</span>
-        </h3>
-        <input
-          type="text"
-          value={newGreeting}
-          placeholder="My new greeting!"
-          onChange={(event) => setNewGreeting(event.target.value)}
-        />
-        <div>
-          <button onClick={fetchGreeting}>Fetch Greeting</button>
-          <button onClick={updateGreeting}>Set Greeting</button>
-        </div>
+        {!provider ? (
+          <div>Please install MetaMask.</div>
+        ) : (
+          <>
+            <h3>
+              Greeting: <span className={styles.greeting}>{greeting}</span>
+            </h3>
+            <input
+              type="text"
+              value={newGreeting}
+              placeholder="My new greeting!"
+              onChange={(event) => setNewGreeting(event.target.value)}
+            />
+            <div>
+              <button onClick={fetchGreeting}>Fetch Greeting</button>
+              <button onClick={updateGreeting}>Set Greeting</button>
+            </div>
+          </>
+        )}
       </main>
     </>
   );
