@@ -1,12 +1,15 @@
 import { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import { Button } from '@/components/Button';
 import { Greeter } from '@/types/contracts/Greeter';
 import GreeterArtifact from '@/artifacts/Greeter.sol/Greeter.json';
 
 const Home: NextPage = () => {
   const [newGreeting, setNewGreeting] = useState('');
   const [fetchedGreeting, setFetchedGreeting] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // We're going to use MetaMask as our provider to connect to the Ethereum network
   // Read more: https://docs.ethers.io/v5/getting-started/#getting-started--connecting
@@ -25,13 +28,19 @@ const Home: NextPage = () => {
     // Local network needs to be up and running for this function to work
     const contract = new ethers.Contract(contractAddress, GreeterArtifact.abi, provider) as Greeter;
 
+    setIsLoading(true);
+    setErrorMessage('');
+
     try {
       // Call the `greet` method and update the UI with the response
       const greeting = await contract.greet();
       setFetchedGreeting(greeting);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      setErrorMessage(error.message);
     }
+
+    setIsLoading(false);
   };
 
   const updateGreeting = async () => {
@@ -42,16 +51,21 @@ const Home: NextPage = () => {
     // blockchain. Write operations cost gas, so an account is needed to pay the fees
     const contract = new ethers.Contract(contractAddress, GreeterArtifact.abi, signer) as Greeter;
 
+    setIsLoading(true);
+    setErrorMessage('');
+
     try {
       // Send the transaction, wait until it's mined and refetch the greeting
       const setGreetingTx = await contract.setGreeting(newGreeting);
       await setGreetingTx.wait();
       await fetchGreeting();
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      setErrorMessage(error.message);
     }
 
     setNewGreeting('');
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -72,11 +86,11 @@ const Home: NextPage = () => {
       {!provider ? (
         <div>Please install the MetaMask extension to interact with the app.</div>
       ) : (
-        <div className="inline-block p-6 mt-4 border-2 border-black rounded-lg">
+        <div className="inline-block w-96 p-6 mt-4 space-y-4 border-2 border-black rounded-lg">
           <h3>
             Greeting: <span>{fetchedGreeting || '?'}</span>
           </h3>
-          <div className="flex my-4">
+          <div className="flex">
             <label htmlFor="new-greeting">New Greeting:</label>
             <input
               type="text"
@@ -87,20 +101,11 @@ const Home: NextPage = () => {
               className="px-1.5 ml-1 border border-yellow-400 rounded-md bg-transparent outline-none placeholder:text-black"
             />
           </div>
-          <div className="space-x-2">
-            <button
-              className="py-2 px-4 rounded-lg text-white bg-black hover:bg-gray-600"
-              onClick={fetchGreeting}
-            >
-              Fetch Greeting
-            </button>
-            <button
-              className="py-2 px-4 rounded-lg text-white bg-black hover:bg-gray-600"
-              onClick={updateGreeting}
-            >
-              Update Greeting
-            </button>
+          <div className="flex items-center space-x-2">
+            <Button label="Fetch Greeting" isLoading={isLoading} onClick={fetchGreeting} />
+            <Button label="Update Greeting" isLoading={isLoading} onClick={updateGreeting} />
           </div>
+          {errorMessage && <div className="text-red-600">Error: {errorMessage}</div>}
         </div>
       )}
     </main>
