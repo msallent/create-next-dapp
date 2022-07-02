@@ -32,7 +32,7 @@
     "eslint": "8.19.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-prettier": "4.2.1",
     "ethereum-waffle": "3.4.4",
     "hardhat": "2.9.9",
     "hardhat-gas-reporter": "1.0.8",
