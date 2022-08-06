@@ -29,7 +29,7 @@
     "autoprefixer": "10.4.8",
     "chai": "4.3.6",
     "dotenv": "16.0.1",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
