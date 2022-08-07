@@ -25,7 +25,7 @@
     "@types/chai": "4.3.1",
     "@types/mocha": "9.1.1",
     "@types/node": "16.11.47",
-    "@types/react": "18.0.15",
+    "@types/react": "18.0.16",
     "autoprefixer": "10.4.8",
     "chai": "4.3.6",
     "dotenv": "16.0.1",
