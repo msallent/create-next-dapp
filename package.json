@@ -35,7 +35,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "ethereum-waffle": "3.4.4",
     "hardhat": "2.11.1",
-    "hardhat-gas-reporter": "1.0.8",
+    "hardhat-gas-reporter": "1.0.9",
     "husky": "7.0.4",
     "lint-staged": "12.5.0",
     "postcss": "8.4.16",
