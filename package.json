@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "ethers": "5.7.2",
-    "next": "12.3.2",
+    "next": "12.3.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -30,7 +30,7 @@
     "chai": "4.3.7",
     "dotenv": "16.0.3",
     "eslint": "8.27.0",
-    "eslint-config-next": "12.3.2",
+    "eslint-config-next": "12.3.3",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "ethereum-waffle": "3.4.4",
