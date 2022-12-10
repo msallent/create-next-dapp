@@ -39,7 +39,7 @@
     "husky": "7.0.4",
     "lint-staged": "12.5.0",
     "postcss": "8.4.19",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "prettier-plugin-solidity": "1.0.0",
     "solhint": "3.3.7",
     "tailwindcss": "3.2.4",
