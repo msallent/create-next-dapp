@@ -31,7 +31,7 @@
     "dotenv": "16.3.1",
     "eslint": "8.47.0",
     "eslint-config-next": "12.3.4",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "8.10.0",
     "eslint-plugin-prettier": "4.2.1",
     "ethereum-waffle": "3.4.4",
     "hardhat": "2.17.1",
