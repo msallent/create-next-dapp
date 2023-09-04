@@ -16,7 +16,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@metamask/providers": "8.1.1",
+    "@metamask/providers": "11.1.2",
     "@nomiclabs/hardhat-ethers": "2.2.3",
     "@nomiclabs/hardhat-etherscan": "3.1.7",
     "@nomiclabs/hardhat-waffle": "2.0.6",
