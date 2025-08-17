@@ -28,7 +28,7 @@
     "@types/react": "18.2.48",
     "autoprefixer": "10.4.21",
     "chai": "4.5.0",
-    "dotenv": "16.4.1",
+    "dotenv": "16.6.1",
     "eslint": "8.56.0",
     "eslint-config-next": "12.3.7",
     "eslint-config-prettier": "8.10.2",
